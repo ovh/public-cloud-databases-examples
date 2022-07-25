@@ -18,7 +18,17 @@ cd public-cloud-databases-examples
 
 ## Read and experiment the tutorials
 
-The tutorials are categorised by **database engine**.
+The tutorials are categorised by **database engine**, then **language** and finally **example** type.
+They all embedded a Dockerfile so you can try it with a simple build and run of it, by setting the environment variable URI to connect to the database.
+
+```bash
+databases/
+└── postgresql
+    └── bash
+        └── hello-world
+            ├── Dockerfile
+            └── example
+```
 
 # Related links
 
