@@ -15,5 +15,5 @@ read USER
 read -s PASSWORD
 read URI
 docker build -t postgresql-bash-hello-world .
-docker run -e "URI=$(echo -n $URI | sed "s/<username>/$USER/" | sed "s/<password>/$PASSWORD/")" postgresql-bash-hello-world
+docker run postgresql-bash-hello-world "$(echo -n $URI | sed "s/<username>/$USER/" | sed "s/<password>/$PASSWORD/")"
 ```
