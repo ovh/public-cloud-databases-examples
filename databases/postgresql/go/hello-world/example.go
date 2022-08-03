@@ -11,7 +11,7 @@ import (
 
 func main() {
 	args := os.Args
-	if len(args) != 2 {
+	if len(args) < 2 {
 		log.Fatal(fmt.Errorf("URI is missing in the environment"))
 	}
 
