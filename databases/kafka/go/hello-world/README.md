@@ -32,3 +32,8 @@ read PATH_TO_CERTIFICATES
 docker build -t kafka-go-hello-world .
 docker run -v $PATH_TO_CERTIFICATES:/certificates kafka-go-hello-world $URI
 ```
+
+## Dependencies
+
+This example is using the following external dependencies:
+* [github.com/confluentinc/confluent-kafka-go](https://github.com/confluentinc/confluent-kafka-go), License Apache-2.0

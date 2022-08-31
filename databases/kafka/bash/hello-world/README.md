@@ -1,4 +1,4 @@
-# Run a hello world on Kafka with python
+# Run a hello world on Kafka with bash
 
 The purpose of this tutorial is to execute a simple command on the apache kafka cluster.
 
@@ -29,11 +29,11 @@ Once you have created your user, and set up your IP restrictions you can run the
 read URI
 ## PATH_TO_CERTIFICATES must be a directory containing all the 3 certificates listed previously
 read PATH_TO_CERTIFICATES
-docker build -t kafka-python-hello-world .
-docker run -v $PATH_TO_CERTIFICATES:/certificates kafka-python-hello-world $URI
+docker build -t kafka-bash-hello-world .
+docker run -v $PATH_TO_CERTIFICATES:/certificates kafka-bash-hello-world $URI
 ```
 
 ## Dependencies
 
 This example is using the following external dependencies:
-* [kafka-python](https://github.com/dpkp/kafka-python/), License Apache-2.0
+* [confluentinc/cp-kafkacat/](https://hub.docker.com/r/confluentinc/cp-kafkacat/), License Apache-2.0
