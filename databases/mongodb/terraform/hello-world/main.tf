@@ -19,7 +19,7 @@ provider "ovh" {
 resource "ovh_cloud_project_database" "service" {
   service_name = var.product.project_id
   description  = "terraform-hello-world"
-  engine       = "mysql"
+  engine       = "mongodb"
   version      = var.product.version
   plan         = var.product.plan
   nodes {
@@ -29,9 +29,8 @@ resource "ovh_cloud_project_database" "service" {
 }
 
 
-resource "ovh_cloud_project_database_user" "userjd" {
+resource "ovh_cloud_project_database_mongodb_user" "userjd" {
   service_name = ovh_cloud_project_database.service.service_name
-  engine       = ovh_cloud_project_database.service.engine
   cluster_id   = ovh_cloud_project_database.service.id
   name         = "johndoe"
 }

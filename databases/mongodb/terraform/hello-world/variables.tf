@@ -15,7 +15,7 @@ variable "product" {
     region     = "DE"
     plan       = "essential"
     flavor     = "db1-7"
-    version    = "8"
+    version    = "5.0"
   }
 }
 
