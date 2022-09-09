@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"os"
 
-	"github.com/go-redis/redis"
+	redis "github.com/go-redis/redis/v9"
 )
 
 func main() {
