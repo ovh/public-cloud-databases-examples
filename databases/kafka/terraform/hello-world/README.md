@@ -60,12 +60,16 @@ terraform apply -var-file=secrets.tfvars -auto-approve
 If you need to re-use the credentials in other scripts, you can export the user credentials and the URI
 
 ```console
-export CLUSTER_CA=$(terraform output -raw cluster_ca)
+## PATH_TO_CERTIFICATES will be the directory containing all the 3 needed certificates
+read PATH_TO_CERTIFICATES
+mkdir -p $PATH_TO_CERTIFICATES
+terraform output -raw cluster_ca > $PATH_TO_CERTIFICATES/ca.certificate.pem
+terraform output -raw user_cert > $PATH_TO_CERTIFICATES/access.certificate.pem
+terraform output -raw user_key > $PATH_TO_CERTIFICATES/access.key
+
 export URI=$(terraform output -raw cluster_uri)
 export PASSWORD=$(terraform output -raw user_password)
 export USER=$(terraform output -raw user_name)
-export USER_CERT=$(terraform output -raw user_cert)
-export USER_KEY=$(terraform output -raw user_key)
 ```
 
 With these exports you can go directly in any other example (e.g: go) to docker build and run it and see it working.
