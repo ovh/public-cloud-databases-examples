@@ -15,11 +15,7 @@ def hello_redis():
         # Read the key
         msg = r.info()
 
-        # Parse the infos
-        #infos = json.loads(msg)
-
         # Print the key
-        #print(infos.redis_version)
         print(msg["redis_version"])
 
     except Exception as e:
