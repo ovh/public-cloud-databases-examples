@@ -1,6 +1,6 @@
-# Hello world for Kafka with terraform
+# Hello world for Mongodb with terraform
 
-The purpose of this tutorial is to create an apache kafka database.
+The purpose of this tutorial is to create a mongodb database.
 
 ## Requirements
 
@@ -13,7 +13,7 @@ You need the following:
 
 ## Build and run
 
-### Create the terraform variables file
+### Create the terraform variables file 
 ```console
 read -s APPLICATION_KEY
 read -s APPLICATION_SECRET
@@ -31,9 +31,9 @@ ovh = {
 product = {
     project_id = "$CLOUD_PROJECT_ID"
     region     = "DE"
-    plan       = "business"
+    plan       = "essential"
     flavor     = "db1-7"
-    version    = "3.1"
+    version    = "5.0"
 }
 
 access = {
@@ -60,20 +60,12 @@ terraform apply -var-file=secrets.tfvars -auto-approve
 If you need to re-use the credentials in other scripts, you can export the user credentials and the URI
 
 ```console
-## PATH_TO_CERTIFICATES will be the directory containing all the 3 needed certificates
-read PATH_TO_CERTIFICATES
-mkdir -p $PATH_TO_CERTIFICATES
-terraform output -raw cluster_ca > $PATH_TO_CERTIFICATES/ca.certificate.pem
-terraform output -raw user_cert > $PATH_TO_CERTIFICATES/access.certificate.pem
-terraform output -raw user_key > $PATH_TO_CERTIFICATES/access.key
-
-export URI=$(terraform output -raw cluster_uri)
 export PASSWORD=$(terraform output -raw user_password)
 export USER=$(terraform output -raw user_name)
+export URI=$(terraform output -raw cluster_uri)
 ```
 
 With these exports you can go directly in any other example (e.g: go) to docker build and run it and see it working.
-
 
 ### Delete the cluster
 
