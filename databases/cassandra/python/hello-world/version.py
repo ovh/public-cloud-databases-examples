@@ -13,7 +13,7 @@ def connect():
     try:
         session
         rows = session.execute("SELECT cql_version FROM system.local")
-        print(rows[0])
+        print(rows.one())
     except:
         print("failure")
     finally:
