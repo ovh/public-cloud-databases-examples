@@ -39,7 +39,7 @@ Mysql     |hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|
 Postgresql|hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:
 Redis™    |hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|   :wrench: 
 Kafka     |hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:
-Opensearch|hello-world|     :wrench:     |    :wrench:      |     :wrench:     |     :wrench:     |   :wrench:
+Opensearch|hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|   :wrench:
 Cassandra |hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:
 M3DB      |hello-world|:white_check_mark:|:white_check_mark:|:white_check_mark:|:white_check_mark:|   :wrench: 
 

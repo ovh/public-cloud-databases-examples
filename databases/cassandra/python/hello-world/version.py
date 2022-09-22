@@ -8,7 +8,7 @@ def connect():
             raise Exception("missing parameters, should be: Host, Port, Username, Password")
 
     auth_provider = PlainTextAuthProvider(username=sys.argv[3], password=sys.argv[4])
-    cluster = Cluster([sys.argv[1]], ssl_options=dict(ca_certs="/certificates/ca.certificate.pem"]), port=sys.argv[2], auth_provider=auth_provider)
+    cluster = Cluster([sys.argv[1]], ssl_options=dict(ca_certs="/certificates/ca.certificate.pem"), port=sys.argv[2], auth_provider=auth_provider)
     session = cluster.connect()
     try:
         session
