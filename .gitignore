@@ -1,0 +1,7 @@
+# Terraform
+.terraform*
+terraform.tfstate*
+secrets.tfvars
+
+# Certificates
+*.pem
