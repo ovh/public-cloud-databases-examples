@@ -5,8 +5,9 @@ import (
 	"log"
 	"net/url"
 	"os"
-	
+
 	"database/sql"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
@@ -14,7 +15,7 @@ func main() {
 	if len(os.Args) < 2 {
 		log.Fatal(fmt.Errorf("URI is missing"))
 	}
-	
+
 	u, err := url.Parse(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
