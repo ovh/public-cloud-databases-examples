@@ -1,5 +1,5 @@
 output "cluster_ca" {
-  value = data.ovh_cloud_project_database_kafka_certificates.certificates.ca
+  value = data.ovh_cloud_project_database_certificates.certificates.ca
 }
 
 output "cluster_uri" {

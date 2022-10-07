@@ -2,7 +2,7 @@ terraform {
   required_providers {
     ovh = {
       source  = "ovh/ovh"
-      version = "0.20"
+      version = "0.22"
     }
   }
 
@@ -49,8 +49,9 @@ resource "ovh_cloud_project_database_ip_restriction" "iprestriction" {
   ip           = var.access.ip
 }
 
-data "ovh_cloud_project_database_kafka_certificates" "certificates" {
+data "ovh_cloud_project_database_certificates" "certificates" {
   service_name = ovh_cloud_project_database.service.service_name
+  engine       = ovh_cloud_project_database.service.engine
   cluster_id   = ovh_cloud_project_database.service.id
 }
 

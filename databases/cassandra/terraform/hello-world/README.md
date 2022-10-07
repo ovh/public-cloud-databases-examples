@@ -60,6 +60,11 @@ terraform apply -var-file=secrets.tfvars -auto-approve
 If you need to re-use the credentials in other scripts, you can export the user credentials and the URI
 
 ```console
+## PATH_TO_CERTIFICATES will be the directory containing all the 3 needed certificates
+read PATH_TO_CERTIFICATES
+mkdir -p $PATH_TO_CERTIFICATES
+terraform output -raw cluster_ca > $PATH_TO_CERTIFICATES/ca.certificate.pem
+
 export PASSWORD=$(terraform output -raw user_password)
 export USER=$(terraform output -raw user_name)
 export URI=$(terraform output -raw cluster_uri)
